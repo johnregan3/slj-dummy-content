@@ -1,0 +1,20 @@
+.spinner {
+	float: none;
+	display: inline-block;
+	visibility:hidden;
+	background-position-y: 3px;
+	height: 19px;
+}
+
+#generate-message, #delete-message {
+	background: #c3ff8a;
+	border: 1px solid #9dff3a;
+	opacity: 0;
+	padding: 5px 10px;
+	width: 25%;
+}
+
+#generate-message.failure, #delete-message.failure {
+	background: #ffebe8;
+	border: 1px solid #cc0000;
+}
