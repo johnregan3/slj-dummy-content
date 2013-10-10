@@ -2,6 +2,8 @@
 
 This simple Plugin creates random Posts/Pages with quotes from Samuel L. Jackson.  It's purpose is to help with debugging new themes and HTML elments, although it's just a lot of fun to play around with!
 
+Generates content, Featured Images (and associated Media Attachments), inline HTML tags, block-level HTML tags and inserts YouTube videos.
+
 ### Installation
 
 Download and install the Plugin just as you would any other WordPress Plugin.
