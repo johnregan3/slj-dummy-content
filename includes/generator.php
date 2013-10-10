@@ -281,7 +281,6 @@ class Sljdc_Generator {
 	 * @since  1.0
 	 * @param  int  $post_id  Post ID of newly-created Post
 	 */
-
 	function add_comments( $post_id ) {
 
 		// Create Secure Comments User
@@ -356,7 +355,7 @@ class Sljdc_Generator {
 	}
 
 	/**
-	 * Generate Random, Secure Password for Created User
+	 * Generate Random, Secure Password and Username for Created User
 	 *
 	 * @since   1.0
 	 * @return  array  $time  Random GMT date and associated Local Date
