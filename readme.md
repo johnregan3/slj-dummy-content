@@ -1,10 +1,11 @@
 # Samuel L. Jackson Dummy Content Generator WordPress Plugin
 
-This simple Plugin creates random Posts/Pages with quotes from Samuel L. Jackson.  It's purpose is to help with debuggin new themes and HTML elments, although it's just a lot of fun to play around with!
+This simple Plugin creates random Posts/Pages with quotes from Samuel L. Jackson.  It's purpose is to help with debugging new themes and HTML elments, although it's just a lot of fun to play around with!
 
 ### Installation
 
 Download and install the Plugin just as you would any other WordPress Plugin.
+
 [Installing Plugins from the WordPress Codex](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins "WordPress Codex: Installing Plugins")
 
 ### Instructions
@@ -23,27 +24,27 @@ Download and install the Plugin just as you would any other WordPress Plugin.
 
 ## FAQ
 
-*** Why isn't this in the WordPress.org Plugins Repository? ***
+** Why isn't this in the WordPress.org Plugins Repository? **
 
 Two reasons:  1. It's R-rated, and 2. It contains tons of copyrighted images, so use at your own peril.
 
-*** Why is this plugin so huge? ***
+** Why is this plugin so huge? **
 
 It contains lots of fun images.  If you want to reduce its size, just delete some of the images.  The plugin will compensate automatically.
 
 ## Changelog
 
-*** ver 1.0 ***
+** ver 1.0 **
 
 * Initial Release
 
 ## Screenshots
 
-![Settings Page](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-1.jpg)
+![Settings Page](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-1.jpg?raw=true)
 
 _SLJ Dummy Content Settings Page_
 
-![Blog Preview](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-2.jpg)
+![Blog Preview](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-2.jpg?raw=true)
 
 _Preview of Blog listing_
 
