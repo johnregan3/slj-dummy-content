@@ -24,17 +24,17 @@ Download and install the Plugin just as you would any other WordPress Plugin.
 
 ## FAQ
 
-** Why isn't this in the WordPress.org Plugins Repository? **
+**Why isn't this in the WordPress.org Plugins Repository?**
 
 Two reasons:  1. It's R-rated, and 2. It contains tons of copyrighted images, so use at your own peril.
 
-** Why is this plugin so huge? **
+**Why is this plugin so huge?**
 
 It contains lots of fun images.  If you want to reduce its size, just delete some of the images.  The plugin will compensate automatically.
 
 ## Changelog
 
-** ver 1.0 **
+**ver 1.0**
 
 * Initial Release
 
