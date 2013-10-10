@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Samuel L. Jackson Dummy Content
  * Plugin URI: http://johnregan3.github.io/slj-dummy-content
- * Description: Add Dummy Content to your WordPress site straight from the lips of Samuel L. Jackson.  Includes HTML elements, featured images and videos.  Deletes all dummy content with one click!  To begin, navigate to Tools > SLJ Dummy Content.
+ * Description: Add Dummy Content to your WordPress site straight from the lips of Samuel L. Jackson.  Includes HTML elements, featured images, videos, and comments.  Deletes all dummy content with one click!  To begin, navigate to Tools > SLJ Dummy Content.
  * Author: John Regan
  * Author URI: http://johnregan3.me
  * Version: 1.0
