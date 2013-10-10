@@ -40,13 +40,13 @@ It contains lots of fun images.  If you want to reduce its size, just delete som
 
 ## Screenshots
 
-![Settings Page](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-1.jpg?raw=true)
-
 _SLJ Dummy Content Settings Page_
 
-![Blog Preview](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-2.jpg?raw=true)
+![Settings Page](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-1.jpg?raw=true)
 
 _Preview of Blog listing_
+
+![Blog Preview](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-2.jpg?raw=true)
 
 ## Credits
 
