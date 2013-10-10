@@ -42,6 +42,8 @@ function sljdc_generate() {
 
 			$gen->add_featured_image( $post_id );
 
+			$gen->add_comments( $post_id );
+
 		}
 
 	}
@@ -81,7 +83,7 @@ class Sljdc_Generator {
 
 		// Generate Random Content
 		$paragraph_rand = rand( 1, 5 );
-		for ($a = 1; $a <= $paragraph_rand; $a++) {
+		for ( $a = 1; $a <= $paragraph_rand; $a++ ) {
 			$strings_rand = array_rand( $strings, 1 );
 			$paragraph    = $strings[$strings_rand];
 
@@ -127,7 +129,7 @@ class Sljdc_Generator {
 		//random number of HTML block level elements
 		$html_rand = rand( 1, 3 );
 
-		for ($b = 1; $b <= $html_rand; $b++) {
+		for ( $b = 1; $b <= $html_rand; $b++ ) {
 			$html_rand       = array_rand( $html_elements, 1 );
 			$headers_rand    = array_rand( $headers, 1 );
 			$element         = $html_elements[$html_rand];
@@ -177,10 +179,7 @@ class Sljdc_Generator {
 
 		$header = array_rand( $headers, 1 );
 
-		// Generate random post dates within the last two weeks
-		$time_rand = rand( 2, 336 );
-		$gmt_date = date( 'Y-m-d H:i:s', strtotime( '-' . $time_rand . ' hours' ) );
-		$local_date = get_date_from_gmt( $gmt_date );
+		$time = self::_generate_time();
 
 		// Create post object
 		$new_content = array(
@@ -189,8 +188,8 @@ class Sljdc_Generator {
 			'post_status'   => 'publish',
 			'post_author'   => 1,
 			'post_type'     => $type,
-			'post_date'     => $local_date,
-			'post_date_gmt' => $gmt_date,
+			'post_date'     => $time['local_date'],
+			'post_date_gmt' => $time['gmt_date'],
 		);
 
 		// Insert the post into the database
@@ -200,6 +199,7 @@ class Sljdc_Generator {
 		return $post_id;
 
 	}
+
 
 	/**
 	 * Create Media Attachment and add Featured Image to Posts
@@ -237,7 +237,7 @@ class Sljdc_Generator {
 		$filename   = basename($image_url); // Create image file name
 
 		// Check folder permission and define file location
-		if( wp_mkdir_p( $upload_dir['path'] ) ) {
+		if ( wp_mkdir_p( $upload_dir['path'] ) ) {
 			$file = $upload_dir['path'] . '/' . $filename;
 		} else {
 			$file = $upload_dir['basedir'] . '/' . $filename;
@@ -261,7 +261,7 @@ class Sljdc_Generator {
 		$attach_id = wp_insert_attachment( $attachment, $file, $post_id );
 
 		// Include image.php
-		require_once(ABSPATH . 'wp-admin/includes/image.php');
+		require_once( ABSPATH . 'wp-admin/includes/image.php' );
 
 		// Define attachment metadata
 		$attach_data = wp_generate_attachment_metadata( $attach_id, $file );
@@ -273,6 +273,108 @@ class Sljdc_Generator {
 		// And finally assign featured image to post
 		set_post_thumbnail( $post_id, $attach_id );
 
+	}
+
+	/**
+	 * Create Random Comments
+	 *
+	 * @since  1.0
+	 * @param  int  $post_id  Post ID of newly-created Post
+	 */
+
+	function add_comments( $post_id ) {
+
+		// Create Secure Comments User
+		if ( ! email_exists( 'sljdummycontent@gmail.com' ) ) {
+			// Generate Secure Password
+			$password = self::_generate_random( 'password', 35 );
+			// Generate Secure Username
+			$username = self::_generate_random( 'username', 10 );
+
+			$user_args = array(
+				'name'       => 'Samuel L. Jackson',
+				'user_email' => 'sljdummycontent@gmail.com',
+				'user_pass'  => $password,
+				'user_login' => $username,
+				'role'       => 'subscriber',
+			);
+
+			$user_id = wp_insert_user( $user_args );
+			update_user_meta( $user_id, 'sljdc', true );
+
+		} else {
+
+			$user = get_user_by( 'email', 'sljdummycontent@gmail.com' );
+			$user_id = $user->ID;
+
+		}
+
+		// Incliude input arrays
+		include( 'input.php' );
+
+		$comments_num = rand( 1, 10 );
+
+		for ( $i = 1; $i <= $comments_num; $i++ ) {
+
+			$time = self::_generate_time();
+
+			$header = array_rand( $headers, 1 );
+
+			$comment = $headers[$header];
+
+			// Assemble Commment
+
+			$args = array(
+				'comment_post_ID'  => $post_id,
+				'comment_content'  => $comment,
+				'user_id'          => $user_id,
+				'comment_date'     => $time['local_date'],
+				'comment_approved' => 1,
+			);
+
+			wp_insert_comment( $args );
+
+		}
+
+	}
+
+	/**
+	 * Generate Times for Posts and Comments
+	 *
+	 * @since   1.0
+	 * @return  array  $time  Random GMT date and associated Local Date
+	 */
+	private static function _generate_time() {
+
+		// Generate random post dates within the last two weeks
+		$time_rand = rand( 2, 336 );
+		$time['gmt_date'] = date( 'Y-m-d H:i:s', strtotime( '-' . $time_rand . ' hours' ) );
+		$time['local_date'] = get_date_from_gmt( $time['gmt_date'] );
+
+		return $time;
+
+	}
+
+	/**
+	 * Generate Random, Secure Password for Created User
+	 *
+	 * @since   1.0
+	 * @return  array  $time  Random GMT date and associated Local Date
+	 */
+	private static function _generate_random( $type = 'password', $length = 35 ) {
+		$alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789!@#$%^&*~";
+		if ( $type = 'password' ) {
+			$alphabet = "abcdefghijklmnopqrstuwxyz";
+		}
+		$pass = array();
+		$alphaLength = strlen($alphabet) - 1;
+
+		for ( $i = 0; $i < $length; $i++ ) {
+			$n = rand(0, $alphaLength);
+			$pass[] = $alphabet[$n];
+		}
+
+		return implode( $pass );
 	}
 
 } // End Sljdc_Generator
@@ -305,13 +407,31 @@ function sljdc_delete() {
 		$post_attachments = get_children( array( 'post_parent' => $post->ID ) );
 		if ( $post_attachments ) {
 			foreach ( $post_attachments as $attachment ) {
+				// Force Delete Attachment and bypass Trash
 				wp_delete_attachment( $attachment->ID, true );
 			}
+		}
+
+		// Delete Comments
+		$comments = get_comments( array( 'post_id' => $post->ID ) );
+		foreach ( $comments as $comment ) {
+			// Force Delete Comment and bypass Trash
+			wp_delete_comment( $comment->comment_ID, true );
 		}
 
 		// Force Delete Post/Page and bypass Trash.
 		wp_delete_post( $post->ID, true );
 
+	}
+
+	/**
+	 * Delete User created for Comments
+	 * Only get Subscribers, so Admins don't accidentally get deleted
+	 */
+	$users = get_users( array( 'meta_key' => 'sljdc', 'role' => 'Subscriber' ) );
+	foreach ( $users as $user ) {
+			// Delete Generated User
+			wp_delete_user( $user->ID );
 	}
 
 }
