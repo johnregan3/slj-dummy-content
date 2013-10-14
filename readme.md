@@ -4,6 +4,8 @@ This simple Plugin creates random Posts/Pages with quotes from Samuel L. Jackson
 
 Generates content, Featured Images (and associated Media Attachments), inline HTML tags, block-level HTML tags and inserts YouTube videos.  Also adds randomly generated Comments, as well as a Samuel L. Jackson user that is deleted when all content is deleted.
 
+![I am the Shepard!](https://raw.github.com/johnregan3/slj-dummy-content/master/assets/header.jpg)
+
 ### Installation
 
 Download and install the Plugin just as you would any other WordPress Plugin.
