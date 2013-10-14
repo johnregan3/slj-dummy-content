@@ -31,6 +31,10 @@ section h1 {
   text-transform: uppercase;
 }
 
+section h1 span {
+  font-size: 40px;
+}
+
 h2 {
   color:#393939;
 }
