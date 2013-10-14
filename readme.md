@@ -44,7 +44,7 @@ It contains lots of fun images.  If you want to reduce its size, just delete som
 
 _SLJ Dummy Content Settings Page_
 
-![Settings Page](https://github.com/johnregan3/slj-dummy-content/master/assets/screenshot-1.jpg)
+![Settings Page](https://raw.github.com/johnregan3/slj-dummy-content/master/assets/screenshot-1.jpg)
 
 _Preview of Blog listing_
 
