@@ -25,8 +25,9 @@ h1 {
 }
 
 section h1 {
-  font-family: 'Alfa Slab One', cursive;
   color: #f2ad08;
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 25px;
   text-shadow: 0px 5px 0px #ac0001;
   text-transform: uppercase;
 }
