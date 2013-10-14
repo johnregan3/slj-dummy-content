@@ -22,9 +22,13 @@ h1, h2, h3 {
 
 h1 {
   font-size:28px;
+}
+
+section h1 {
   font-family: 'Alfa Slab One', cursive;
   color: #f2ad08;
-	text-shadow: 0px 5px 0px #ac0001;
+  text-shadow: 0px 5px 0px #ac0001;
+  text-transform: uppercase;
 }
 
 h2 {
