@@ -44,11 +44,11 @@ It contains lots of fun images.  If you want to reduce its size, just delete som
 
 _SLJ Dummy Content Settings Page_
 
-![Settings Page](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-1.jpg?raw=true)
+![Settings Page](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-1.jpg)
 
 _Preview of Blog listing_
 
-![Blog Preview](https://github.com/johnregan3/slj-dummy-content/blob/master/assets/screenshot-2.jpg?raw=true)
+![Blog Preview](https://raw.github.com/johnregan3/slj-dummy-content/master/assets/screenshot-2.png)
 
 ## Credits
 
